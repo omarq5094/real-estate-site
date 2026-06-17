@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>عقاراتي</title><link rel="stylesheet" href="styles.css"/></head>
+<body>
+<header class="site-header"><div class="container header-grid"><div><h1>عقاراتي</h1><p>إعلاناتك، حالتها، وملاحظات المراجعة.</p></div><nav class="nav"><a href="index.html">الرئيسية</a><a href="add-property.html">أضف عقار</a><button class="theme-toggle" data-theme-toggle type="button">🌙 Dark</button><button class="theme-toggle" type="button" onclick="logoutUser()">خروج</button></nav></div></header>
+<main class="container">
+<section class="hero-card"><div><span class="badge">My Properties</span><h2 id="welcomeTitle">لوحة العميل</h2><p>إذا طلب الموظف تعديل إعلان، ستجد زر التعديل هنا.</p></div><button class="primary-btn" onclick="location.href='add-property.html'">إضافة عقار جديد</button></section>
+<section class="section"><div class="section-head"><h2>قائمة عقاراتي</h2><button id="refreshBtn" class="secondary-btn">تحديث</button></div><div id="myStatus" class="status-box">جاري تحميل العقارات...</div><div id="myPropertiesGrid" class="cards-grid"></div></section>
+<section class="section customer-leads-section">
+  <div class="section-head">
+    <div><span class="badge">My Requests</span><h2>طلباتي المرسلة</h2><p>تابع حالة طلبات الاستفسار والمعاينة التي أرسلتها للمكتب.</p></div>
+  </div>
+  <div id="myLeadsStatus" class="status-box">جاري تحميل طلباتك...</div>
+  <div id="myLeadsGrid" class="customer-leads-grid"></div>
+</section>
+</main>
+<script src="theme.js"></script><script src="config.js"></script>
+  <script src="subscription-guard.js"></script><script src="auth.js"></script><script src="my-properties.js"></script>
+  <script src="image-lightbox.js"></script>
+</body></html>

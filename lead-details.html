@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تفاصيل طلب العميل</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-dashboard-page admin-inner-page crm-page">
+  <div class="admin-shell">
+    <aside class="admin-sidebar" aria-label="روابط لوحة التحكم">
+      <div class="admin-brand-card">
+        <div class="admin-brand-icon">ع</div>
+        <div><strong>منصة العقار</strong><span>مركز العمليات</span></div>
+      </div>
+      <nav class="admin-side-nav">
+        <a href="admin.html"><span>الرئيسية</span><small>Dashboard</small></a>
+        <a href="index.html"><span>الموقع</span><small>Public</small></a>
+        <a href="all-properties.html"><span>كل العقارات</span><small>Inventory</small></a>
+        <a href="leads.html" class="active"><span>طلبات العملاء</span><small>CRM</small></a>
+        <a href="users-management.html"><span>إدارة العملاء</span><small>Users</small></a>
+        <a href="logs.html"><span>سجل العمليات</span><small>Logs</small></a>
+        <a href="duplicates.html"><span>الإعلانات المكررة</span><small>Duplicates</small></a>
+      </nav>
+      <div class="admin-sidebar-footer">
+        <button class="theme-toggle" data-theme-toggle type="button">🌙 Dark</button>
+        <button class="theme-toggle logout-pill" type="button" onclick="logoutUser()">خروج</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar admin-inner-topbar crm-topbar">
+        <div>
+          <span class="admin-eyebrow">Lead Details</span>
+          <h1>تفاصيل طلب العميل</h1>
+          <p>حدث الحالة، عيّن الموظف المسؤول، وحدد موعد المتابعة القادم.</p>
+        </div>
+        <div class="admin-top-actions">
+          <a class="secondary-btn" href="leads.html">العودة إلى الطلبات</a>
+        </div>
+      </header>
+
+      <div data-staff-guard-status class="status-box admin-floating-status">جاري التحقق من الصلاحية...</div>
+      <section id="leadDetailsContent" class="hidden admin-content-grid crm-details-grid">
+        <div id="leadDetailsStatus" class="status-box compact-status">جاري تحميل الطلب...</div>
+
+        <section class="crm-details-layout">
+          <div class="crm-details-main">
+            <section class="admin-card crm-client-card">
+              <div class="crm-card-head">
+                <div>
+                  <span class="admin-section-kicker">Customer Profile</span>
+                  <h2 id="clientName">-</h2>
+                  <p id="clientPhone">-</p>
+                </div>
+                <span id="leadStatusBadge" class="crm-status-chip">-</span>
+              </div>
+              <div class="crm-direct-actions" id="directActions"></div>
+              <div class="crm-info-grid" id="clientInfoGrid"></div>
+            </section>
+
+            <section class="admin-card crm-property-card">
+              <div class="section-head admin-section-head">
+                <div>
+                  <span class="admin-section-kicker">Related Property</span>
+                  <h2>العقار المرتبط بالطلب</h2>
+                </div>
+              </div>
+              <div id="propertySummary"></div>
+            </section>
+
+            <section class="admin-card crm-history-card">
+              <div class="section-head admin-section-head">
+                <div>
+                  <span class="admin-section-kicker">Activity Timeline</span>
+                  <h2>سجل متابعة الطلب</h2>
+                  <p>كل تحديث يتم حفظه تلقائيًا لتوضيح مسار المتابعة.</p>
+                </div>
+              </div>
+              <div id="leadTimeline" class="crm-timeline"></div>
+            </section>
+          </div>
+
+          <aside class="admin-card crm-update-panel">
+            <span class="admin-section-kicker">Update Lead</span>
+            <h2>تحديث الطلب</h2>
+            <form id="leadUpdateForm" class="crm-update-form">
+              <label>الحالة
+                <select id="leadStatusSelect" required></select>
+              </label>
+              <label>الموظف المسؤول
+                <select id="assignedToSelect"><option value="">بدون إسناد</option></select>
+              </label>
+              <label>موعد المتابعة القادم
+                <input id="followUpAtInput" type="datetime-local" />
+              </label>
+              <label>ملاحظة المتابعة
+                <textarea id="leadNotesInput" rows="5" placeholder="اكتب آخر نتيجة للتواصل أو الخطوة القادمة"></textarea>
+              </label>
+              <button class="primary-btn" type="submit">حفظ التحديث</button>
+            </form>
+          </aside>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="theme.js"></script>
+  <script src="config.js"></script>
+  <script src="subscription-guard.js"></script>
+  <script src="auth.js"></script>
+  <script src="lead-details.js"></script>
+  <script src="image-lightbox.js"></script>
+</body>
+</html>

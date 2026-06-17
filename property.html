@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>تفاصيل العقار</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-grid">
+      <div>
+        <h1>تفاصيل العقار</h1>
+        <p>بيانات العقار والموقع وطلب التواصل.</p>
+      </div>
+      <nav class="nav">
+        <a href="index.html">الرئيسية</a>
+      <button class="theme-toggle" data-theme-toggle type="button">🌙 Dark</button>
+      <span data-auth-nav></span>
+      </nav>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="propertyStatus" class="status-box">جاري تحميل العقار...</div>
+    <section id="propertyDetails" class="property-details hidden"></section>
+
+    <section class="section contact-section">
+      <div class="section-head">
+        <h2>تواصل مباشر</h2>
+        <p>تواصل مع المكتب عبر WhatsApp أو الاتصال المباشر.</p>
+      </div>
+      <div class="public-contact-actions large-contact" data-public-contact></div>
+    </section>
+
+    <section class="section">
+      <div class="section-head">
+        <h2>طلب تواصل أو معاينة</h2>
+        <p>أرسل طلبك وسيتواصل معك المكتب لمتابعته.</p>
+      </div>
+      <form id="leadForm" class="form-card">
+        <div class="form-grid">
+          <label>الاسم
+            <input name="customer_name" required placeholder="اسم العميل" />
+          </label>
+          <label>الجوال
+            <input name="customer_phone" required placeholder="05xxxxxxxx" />
+          </label>
+          <label>نوع الطلب
+            <select name="request_type">
+              <option value="inquiry">استفسار</option>
+              <option value="visit">طلب معاينة</option>
+              <option value="call">طلب اتصال</option>
+            </select>
+          </label>
+        </div>
+        <label>رسالة
+          <textarea name="message" rows="3" placeholder="أرغب في معرفة تفاصيل أكثر..."></textarea>
+        </label>
+        <button class="primary-btn" type="submit">إرسال الطلب</button>
+        <div id="leadStatus" class="status-box hidden"></div>
+      </form>
+    </section>
+  </main>
+
+  <script src="theme.js"></script>
+  <script src="config.js"></script>
+  <script src="subscription-guard.js"></script>
+  <script src="site-config.js"></script>
+  <script src="site-settings.js"></script>
+  <script src="auth.js"></script>
+  <script src="app.js"></script>
+  <script src="image-lightbox.js"></script>
+</body>
+</html>
