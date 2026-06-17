@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>تسجيل الدخول</title><link rel="stylesheet" href="styles.css"/></head>
+<body>
+<header class="site-header"><div class="container header-grid"><div><h1>تسجيل الدخول</h1><p>ادخل بالجوال أو البريد لمتابعة عقاراتك.</p></div><nav class="nav"><a href="index.html">الرئيسية</a><a href="register.html">تسجيل حساب</a><button class="theme-toggle" data-theme-toggle type="button">🌙 Dark</button></nav></div></header>
+<main class="container auth-page">
+<form id="loginForm" class="form-card auth-card">
+<span class="badge">Login</span><h2>دخول العميل</h2>
+<label>الجوال أو البريد<input name="identifier" required placeholder="05xxxxxxxx أو email@example.com"/></label>
+<label>كلمة المرور
+        <div class="password-wrap">
+          <input id="loginPassword" name="password" type="password" required placeholder="••••••••"/>
+          <button type="button" class="password-eye" onclick="togglePasswordVisibility('loginPassword', this)" aria-label="إظهار كلمة المرور">👁️</button>
+        </div>
+      </label>
+<button class="primary-btn" type="submit">دخول</button>
+<div id="loginStatus" class="status-box hidden"></div>
+<p class="meta">ليس لديك حساب؟ <a class="inline-link" href="register.html" data-register-link>سجل الآن</a></p>
+</form></main>
+<script src="theme.js"></script><script src="config.js"></script>
+  <script src="subscription-guard.js"></script>
+  <script src="site-config.js"></script>
+  <script src="site-settings.js"></script><script src="auth.js"></script><script src="password-toggle.js"></script><script src="login.js"></script>
+  <script src="image-lightbox.js"></script>
+</body></html>

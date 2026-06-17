@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>الإعلانات المكررة</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="admin-dashboard-page admin-inner-page">
+  <div class="admin-shell">
+    <aside class="admin-sidebar" aria-label="روابط لوحة التحكم">
+      <div class="admin-brand-card">
+        <div class="admin-brand-icon">ع</div>
+        <div>
+          <strong>منصة العقار</strong>
+          <span>مركز العمليات</span>
+        </div>
+      </div>
+
+      <nav class="admin-side-nav">
+        <a href="admin.html"><span>الرئيسية</span><small>Dashboard</small></a>
+        <a href="index.html"><span>الموقع</span><small>Public</small></a>
+        <a href="all-properties.html"><span>كل العقارات</span><small>Inventory</small></a>
+        <a href="leads.html"><span>طلبات العملاء</span><small>CRM</small></a>
+        <a href="users-management.html"><span>إدارة العملاء</span><small>Users</small></a>
+        <a href="logs.html"><span>سجل العمليات</span><small>Logs</small></a>
+        <a href="duplicates.html" class="active"><span>الإعلانات المكررة</span><small>Duplicates</small></a>
+      </nav>
+
+      <div class="admin-sidebar-footer">
+        <button class="theme-toggle" data-theme-toggle type="button">🌙 Dark</button>
+        <button class="theme-toggle logout-pill" type="button" onclick="logoutUser()">خروج</button>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <header class="admin-topbar admin-inner-topbar">
+        <div>
+          <span class="admin-eyebrow">Duplicates</span>
+          <h1>الإعلانات المكررة</h1>
+          <p>مركز جودة يساعدك تكشف التكرارات وتحافظ على ترتيب المنصة.</p>
+        </div>
+        <div class="admin-top-actions">
+          <a class="secondary-btn" href="admin.html">لوحة التحكم</a>
+          <a class="primary-btn" href="all-properties.html">كل العقارات</a>
+        </div>
+      </header>
+
+      <div data-staff-guard-status class="status-box admin-floating-status">جاري التحقق من الصلاحية...</div>
+
+      <section id="duplicatesContent" class="hidden admin-content-grid">
+        <section class="admin-hero-panel admin-page-summary">
+          <div>
+            <span class="badge">Quality Control</span>
+            <h2>تنظيف المخزون من التكرارات</h2>
+            <p>اكتشف الإعلانات المتشابهة وأرشف المكرر بدون حذف نهائي.</p>
+          </div>
+          <div class="admin-hero-mini">
+            <span>أرشفة آمنة</span>
+            <strong>∞</strong>
+          </div>
+        </section>
+
+        <section class="admin-card">
+          <div class="section-head admin-section-head">
+            <div>
+              <span class="admin-section-kicker">Duplicates</span>
+              <h2>فحص التكرارات</h2>
+              <p>الأرشفة لا تحذف السجل، فقط تمنع ظهوره للعملاء والزوار.</p>
+            </div>
+            <button id="refreshDuplicatesBtn" class="secondary-btn">تحديث</button>
+          </div>
+
+          <div id="duplicatesStatus" class="status-box compact-status">جاري تحميل التكرارات...</div>
+          <div id="duplicatesList" class="admin-duplicates-list"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <script src="theme.js"></script>
+  <script src="config.js"></script>
+  <script src="subscription-guard.js"></script>
+  <script src="auth.js"></script>
+  <script src="duplicates.js"></script>
+  <script src="image-lightbox.js"></script>
+</body>
+</html>

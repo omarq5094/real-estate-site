@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><title>تعديل الإعلان</title><link rel="stylesheet" href="styles.css"/></head>
+<body>
+<header class="site-header"><div class="container header-grid"><div><h1>تعديل الإعلان</h1><p>عدّل بيانات إعلانك ثم أعد إرساله للمراجعة.</p></div><nav class="nav"><a href="my-properties.html">عقاراتي</a><a href="index.html">الرئيسية</a><button class="theme-toggle" data-theme-toggle type="button">🌙 Dark</button></nav></div></header>
+<main class="container">
+<div id="editStatus" class="status-box">جاري تحميل الإعلان...</div>
+<form id="editPropertyForm" class="form-card hidden">
+<input type="hidden" name="property_id"/>
+<div id="currentImages" class="edit-images"></div>
+<div class="form-grid">
+<label>عنوان الإعلان<input name="title" required/></label>
+<label>نوع العقار<select name="type" required><option value="">اختر</option><option value="villa">فيلا</option><option value="apartment">شقة</option><option value="land">أرض</option><option value="building">عمارة</option><option value="shop">محل</option></select></label>
+<label>الغرض<select name="purpose" required><option value="">اختر</option><option value="sale">بيع</option><option value="rent">إيجار</option></select></label>
+<label>المدينة<input name="city" required/></label><label>الحي<input name="district" required/></label>
+<label>السعر<input name="price" required type="number" min="0"/></label><label class="inline-checkbox price-visibility-check"><input name="show_price" type="checkbox" value="yes"/><span><strong>اعرض السعر للعملاء</strong><small>إذا لم تُفعّل الخيار، سيظهر للعميل: السعر عند التواصل.</small></span></label><label><span class="field-label">المساحة م² <small class="optional-note">اختياري</small></span><input name="area" type="number" min="0"/></label>
+<label><span class="field-label">عدد الغرف <small class="optional-note">اختياري</small></span><input name="bedrooms" type="number" min="0"/></label><label><span class="field-label">عدد دورات المياه <small class="optional-note">اختياري</small></span><input name="bathrooms" type="number" min="0"/></label>
+<label><span class="field-label">رابط Google Maps <small class="optional-note">اختياري</small></span><input name="map_url"/></label><label><span class="field-label">Latitude <small class="optional-note">اختياري</small></span><input name="latitude"/></label><label><span class="field-label">Longitude <small class="optional-note">اختياري</small></span><input name="longitude"/></label>
+</div>
+<label><span class="field-label">الوصف <small class="optional-note">اختياري</small></span><textarea name="description" rows="4"></textarea></label>
+<label class="upload-box">صور إضافية<input id="editPropertyImagesInput" name="images" type="file" accept="image/*" multiple/><small>اختر عدة صور دفعة واحدة أو أضفها على عدة دفعات قبل الحفظ. يمكنك حذف الصور الحالية من الأعلى.</small></label>
+<div id="editSelectedImagesPreview" class="selected-images-preview hidden"><div class="image-toolbar"><h3>الصور الجديدة المختارة</h3><span id="editSelectedImagesCount" class="status-pill wait" dir="ltr">0 / 10</span></div><div id="editSelectedImagesGrid" class="selected-images-grid"></div><button id="clearEditSelectedImagesBtn" class="ghost-btn" type="button">مسح الصور الجديدة المختارة</button></div>
+<button class="primary-btn" type="submit">حفظ وإعادة الإرسال للمراجعة</button>
+<div id="editSubmitStatus" class="status-box hidden"></div>
+</form></main>
+<script src="theme.js"></script><script src="config.js"></script>
+  <script src="subscription-guard.js"></script><script src="auth.js"></script><script src="edit-property.js"></script>
+  <script src="image-lightbox.js"></script>
+</body></html>
